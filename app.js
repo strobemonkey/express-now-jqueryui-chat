@@ -1,5 +1,5 @@
-var express = require('express@1.0.8');
-var jade = require('jade@0.6.0');
+var express = require('express');
+var jade = require('jade');
 
 var app = module.exports = express.createServer();
 
@@ -38,7 +38,7 @@ if (!module.parent) {
   console.log("Express server listening on port %d", app.address().port);
 }
 
-var everyone = require("now@0.2.4").initialize(app);
+var everyone = require("now").initialize(app);
 
 everyone.connected(function(){
   console.log("Joined: " + this.now.name);
