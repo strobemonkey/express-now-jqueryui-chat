@@ -12,8 +12,6 @@ The "smoothness" jQuery UI theme is the default but you can put in any [jQuery U
 
 You'll be needing [Node.js](http://nodejs.org/).
 
-Express 1.0.8 requires Node.js 0.2.x, I believe.
-
 Install the following via [npm](http://www.npmjs.org/):
 
 * express@1.0.8
