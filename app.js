@@ -1,5 +1,5 @@
-var express = require('express');
-var jade = require('jade');
+var express = require('express@2.0.0');
+var jade = require('jade@0.9.1');
 
 var app = module.exports = express.createServer();
 
@@ -8,10 +8,10 @@ var app = module.exports = express.createServer();
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
-  app.use(express.bodyDecoder());
+  app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(express.staticProvider(__dirname + '/public'));
+  app.use(express.static(__dirname + '/public'));
 });
 
 app.configure('development', function(){
@@ -25,9 +25,8 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', function(req, res){
-  res.render('index', { locals: {
+  res.render('index', {
       title: 'Express Now jQuery chat'
-    }
   });
 });
 
@@ -38,7 +37,7 @@ if (!module.parent) {
   console.log("Express server listening on port %d", app.address().port);
 }
 
-var everyone = require("now").initialize(app);
+var everyone = require("now@0.2.4").initialize(app);
 
 everyone.connected(function(){
   console.log("Joined: " + this.now.name);
