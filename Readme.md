@@ -14,6 +14,6 @@ You'll be needing [Node.js](http://nodejs.org/).
 
 Install the following via [npm](http://www.npmjs.org/):
 
-* express@1.0.8
-* jade@0.6.0
+* express@2.0.0
+* jade@0.9.1
 * now@0.2.4
